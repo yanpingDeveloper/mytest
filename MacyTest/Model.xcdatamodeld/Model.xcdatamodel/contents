@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Color" representedClassName="Colors" syncable="YES">
+        <attribute name="alpha" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="blue" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="green" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="red" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="colorToProduct" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="productToColor" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoThumbURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="productDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regularPrice" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="salePrice" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="productToColor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Color" inverseName="colorToProduct" inverseEntity="Color" syncable="YES"/>
+        <relationship name="productToStore" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Store" inverseName="storeToProduct" inverseEntity="Store" syncable="YES"/>
+    </entity>
+    <entity name="Store" representedClassName="Store" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="storeToProduct" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="productToStore" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Color" positionX="-254" positionY="81" width="128" height="118"/>
+        <element name="Product" positionX="-549" positionY="113" width="128" height="178"/>
+        <element name="Store" positionX="-558" positionY="-153" width="128" height="88"/>
+    </elements>
+</model>

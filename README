@@ -1,0 +1,5 @@
+This project is written to display list of data from mock data.
+
+In this project, Data model is core data and one singleton class  handled all data create, update , save , delete issue. NSFetchRequestController is used to display product list view. Used block and delegate to handle the events. 
+
+
